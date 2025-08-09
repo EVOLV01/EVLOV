@@ -1,76 +1,56 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Katalog Produk</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        padding: 20px;
-        text-align: center;
-    }
-    .product-card {
-        background: white;
-        border-radius: 12px;
-        padding: 20px;
-        max-width: 350px;
-        margin: auto;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .product-card img {
-        width: 100%;
-        border-radius: 8px;
-    }
-    select, button {
-        padding: 10px;
-        margin: 10px 0;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-        font-size: 14px;
-        width: 100%;
-    }
-    button {
-        background-color: black;
-        color: white;
-        font-weight: bold;
-        cursor: pointer;
-    }
-    button:hover {
-        background-color: #444;
-    }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Catalog - EVOLUTION T-Shirt</title>
+  <style>
+    :root{--bg:#ffffff;--text:#000000;--muted:#666}
+    body{font-family:Inter, system-ui, Arial, sans-serif;background:var(--bg);color:var(--text);margin:0;padding:24px;display:flex;justify-content:center}
+    .product-card{width:340px;background:#fff;border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(0,0,0,0.08);text-align:center}
+    .brand{font-weight:700;letter-spacing:1px;margin-bottom:6px}
+    img{width:100%;border-radius:8px;background:#f2f2f2}
+    h1{font-size:18px;margin:12px 0}
+    p.lead{color:var(--muted);margin:6px 0 12px;font-size:14px}
+    .price{font-size:20px;font-weight:700;margin:8px 0;color:var(--text)}
+    label{display:block;text-align:left;font-size:13px;margin-top:10px;margin-bottom:6px}
+    select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6;font-size:14px}
+    .btn{display:inline-block;width:100%;padding:12px;border-radius:8px;background:#000;color:#fff;border:0;font-weight:700;margin-top:14px;cursor:pointer}
+    .btn:active{transform:translateY(1px)}
+    .note{font-size:13px;color:var(--muted);margin-top:8px}
+    @media (max-width:420px){body{padding:12px}.product-card{width:100%}}
+  </style>
 </head>
 <body>
+  <div class="product-card">
+    <div class="brand">EVOLV</div>
+    <img src="https://via.placeholder.com/600x600/000000/ffffff?text=EVOLUTION+T-Shirt+%28Hitam%29" alt="T-Shirt EVOLUTION - Hitam" />
+    <h1>T-Shirt Keren EVOLUTION – Desain Unik & Filosofis</h1>
+    <p class="lead">Kaos unisex berkualitas — nyaman dipakai sehari-hari dengan desain filosofis.</p>
 
-<div class="product-card">
-    <img src="https://via.placeholder.com/350x350?text=T-Shirt+EVOLUTION" alt="T-Shirt Keren EVOLUTION">
-    <h2>T-Shirt Keren EVOLUTION – Desain Unik & Filosofis</h2>
-    <p>Kaos unisex berkualitas tinggi dengan desain filosofis yang unik.</p>
+    <div class="price">Rp 82.000</div>
 
-    <label for="color">Pilih Warna:</label>
-    <select id="color">
-        <option value="putih">Putih</option>
-        <option value="hitam">Hitam</option>
+    <label for="color">Warna</label>
+    <select id="color" aria-label="Pilih warna">
+      <option value="hitam" selected>Hitam</option>
+      <option value="putih">Putih</option>
     </select>
 
-    <label for="size">Pilih Ukuran:</label>
-    <select id="size">
-        <option value="M">M</option>
-        <option value="L">L</option>
+    <label for="size">Ukuran</label>
+    <select id="size" aria-label="Pilih ukuran">
+      <option value="L" selected>L</option>
     </select>
 
-    <button onclick="addToCart()">Tambah ke Keranjang</button>
-</div>
+    <button class="btn" id="addBtn">Tambah ke Keranjang</button>
+    <div class="note">Stok terbatas. Harga sudah termasuk PPN.</div>
+  </div>
 
-<script>
-function addToCart() {
-    const warna = document.getElementById("color").value;
-    const ukuran = document.getElementById("size").value;
-    alert(`Produk dimasukkan ke keranjang:\nT-Shirt Keren EVOLUTION\nWarna: ${warna}\nUkuran: ${ukuran}`);
-}
-</script>
-
+  <script>
+    document.getElementById('addBtn').addEventListener('click', function(){
+      const color = document.getElementById('color').value;
+      const size = document.getElementById('size').value;
+      alert(`Produk ditambahkan ke keranjang:\nT-Shirt Keren EVOLUTION\nWarna: ${color}\nUkuran: ${size}\nHarga: Rp 82.000`);
+    });
+  </script>
 </body>
 </html>
