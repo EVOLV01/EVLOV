@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EVOLV - Toko Kaos Online</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    header h1 {
+      font-size: 1.5em;
+      letter-spacing: 2px;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+    .banner {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+    .banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .banner-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .banner-text h2 {
+      margin: 0 0 10px;
+      font-size: 1.8em;
+    }
+    .btn-primary {
+      display: inline-block;
+      background-color: #ff4b2b;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1em;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .btn-primary:hover {
+      background-color: #ff3a1a;
+    }
+    .catalog {
+      padding: 20px;
+    }
+    .filters {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .filters select {
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .product {
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      background-color: #fff;
+      transition: box-shadow 0.3s;
+    }
+    .product:hover {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .product h3 {
+      font-size: 1.1em;
+      margin: 10px 0 5px;
+    }
+    .product p {
+      margin: 5px 0;
+    }
+    @media (max-width: 600px) {
+      .banner-text h2 {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EVOLV</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Katalog</a>
+      <a href="#">Kontak</a>
+    </nav>
+  </header>
+  <section class="banner">
+    <img src="banner-kaos.jpg" alt="Model Memakai Kaos Trendi" />
+    <div class="banner-text">
+      <h2>Kaos Keren, Nyaman Dipakai Setiap Hari – Mulai dari Rp99.000!</h2>
+      <a href="#katalog" class="btn-primary">BELI SEKARANG</a>
+    </div>
+  </section>
+  <section id="katalog" class="catalog">
+    <div class="filters">
+      <select>
+        <option>Warna</option>
+        <option>Putih</option>
+        <option>Hitam</option>
+        <option>Merah</option>
+      </select>
+      <select>
+        <option>Ukuran</option>
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+      <select>
+        <option>Harga</option>
+        <option>< Rp100.000</option>
+        <option>Rp100.000 - Rp200.000</option>
+        <option>> Rp200.000</option>
+      </select>
+    </div>
+    <div class="products">
+      <div class="product">
+        <img src="kaos1.jpg" alt="Kaos Putih EVOLV" />
+        <h3>Kaos Putih EVOLV</h3>
+        <p>Rp99.000</p>
+        <p>Ukuran: S, M, L, XL</p>
+      </div>
+      <div class="product">
+        <img src="kaos2.jpg" alt="Kaos Hitam EVOLV" />
+        <h3>Kaos Hitam EVOLV</h3>
+        <p>Rp120.000</p>
+        <p>Ukuran: S, M, L, XL</p>
+      </div>
+      <div class="product">
+        <img src="kaos3.jpg" alt="Kaos Merah EVOLV" />
+        <h3>Kaos Merah EVOLV</h3>
+        <p>Rp110.000</p>
+        <p>Ukuran: S, M, L, XL</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
